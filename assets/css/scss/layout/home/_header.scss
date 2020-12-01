@@ -1,0 +1,43 @@
+/* <-- Start Header CSS --> */
+
+.header  {
+
+
+  &__link {
+    a {
+      color: #000;
+      font-size: 14px;
+      &:hover {
+        color: #fb4226;
+      }
+    }
+    &__right {
+      > div * {
+        margin-right: 10px;
+      }
+      span, select, i {
+        font-size: 14px;
+        color: #9b9b9b;
+      }
+      .login {
+        align-self: center;
+      }
+      select {
+        padding: 0 10px;
+        border: none!important;
+        background-color: transparent;
+      }
+    }
+  }
+  &__logo img {
+    width: 50px!important;
+    height: 50px;
+    display: block;
+  }
+
+
+
+
+}
+/* <-- End Section Header CSS --> */
+

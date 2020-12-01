@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+@charset "UTF-8";
+
+// 4. Layout-related sections
+@import
+'../layout/home/header',
+'../layout/home/carousel',
+'../layout/home/movies',
+'../layout/home/theater',
+'../layout/home/blog',
+'../layout/home/app',
+'../layout/home/footer';
+

@@ -1,0 +1,32 @@
+/* Mixin */
+
+/* Button */
+@mixin button ($py, $px) {
+  padding: $py $px;
+}
+
+/* Mixin for Span */
+@mixin span ($spacing: getSpacing('3'), $txtcolor: white, $fz: getFontSize('p-17'), $width: 80px, $height: 2px, $bottom: -20px, $bgcolor: getBg('primary')){
+  letter-spacing: $spacing;
+  position: relative;
+  color: $txtcolor;
+  font-size: $fz;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $height;
+    bottom: $bottom;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: $bgcolor;
+  }
+};
+
+/* Mixin for Background images */
+// $img: file name of images background
+@mixin bgimg($img){
+  background: center center no-repeat fixed img-path-css($img);
+  background-size: cover;
+};

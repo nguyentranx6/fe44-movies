@@ -1,0 +1,48 @@
+/* <-- Start Movies Section CSS --> */
+.movies {
+  position: relative;
+  h2 {
+    cursor: pointer;
+    margin: 50px 0;
+  }
+  &__sort {
+    background-color: #fff;
+    display: block;
+    border-radius: 5px;
+    height: 80px;
+    padding: 20px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    select {
+      border-style: none;
+      padding-right: 30px;
+      margin-right: 30px;
+      border-right: 1px solid #fff;
+      border-right-color: rgba(238,238,238,.88);
+    }
+    button {
+      cursor: pointer!important;
+    }
+
+  }
+  &__showing__list__item {
+    margin-bottom: 30px;
+    img {
+      margin-bottom: 15px;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    &__list {
+      margin-top: 70px;
+      h2 {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+    }
+    
+  }
+}
+/* <-- End Movies Section CSS --> */

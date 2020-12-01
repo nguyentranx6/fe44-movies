@@ -1,0 +1,18 @@
+.chair-button {
+    font-size: 12px;
+    padding: 5px;
+    margin: 5px 0;
+    background: #b4c1c1;
+}
+
+.chair-vip {
+    background: #e32323;
+}
+
+.chair-reserved {
+    background: #26a930;
+}
+
+.chair-normal {
+    background: #b4c1c1;
+}

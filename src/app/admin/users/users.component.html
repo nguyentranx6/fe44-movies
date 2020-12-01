@@ -1,0 +1,29 @@
+<div class="container">
+    <div *ngIf="allUsers.length > 0">
+        <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="taiKhoan">
+                <th mat-header-cell *matHeaderCellDef>Tài khoản</th>
+                <td mat-cell *matCellDef="let element">{{element.taiKhoan}}</td>
+            </ng-container>
+            <ng-container matColumnDef="hoTen">
+                <th mat-header-cell *matHeaderCellDef>Họ tên</th>
+                <td mat-cell *matCellDef="let element">{{element.hoTen}}</td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let element">{{element.email}}</td>
+            </ng-container>
+            <ng-container matColumnDef="soDt">
+                <th mat-header-cell *matHeaderCellDef>Số điện thoại</th>
+                <td mat-cell *matCellDef="let element">{{element.soDt}}</td>
+            </ng-container>
+            <ng-container matColumnDef="maLoaiNguoiDung">
+                <th mat-header-cell *matHeaderCellDef>Mã loại người dùng</th>
+                <td mat-cell *matCellDef="let element">{{element.maLoaiNguoiDung}}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayColums"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayColums"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

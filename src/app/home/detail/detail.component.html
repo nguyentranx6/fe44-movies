@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <div class="detail" *ngIf="movieDetail">
+        <div class="detail__info">
+            <div class="row">
+                <div class="col-3">
+                    <img [src]="movieDetail.hinhAnh" alt="">
+                </div>
+                <div class="col-6">
+                    <p><strong>Tên Phim:</strong> {{movieDetail.tenPhim}}</p>
+                    <p><strong>Mô tả:</strong> {{movieDetail.moTa}}</p>
+
+                    <p><strong>Ngày khởi chiếu:</strong> {{movieDetail.ngayKhoiChieu | date}}</p>
+                </div>
+                <div class="col-3">
+                    <p><strong>Đánh giá:</strong> {{movieDetail.danhGia}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-theaters></app-theaters>
+
+<!--biDanh: "13-reasons-why"-->
+<!--danhGia: 10-->
+<!--hinhAnh: "http://movie0706.cybersoft.edu.vn/hinhanh/13-reasons-why_gp01.jpg"-->
+<!--maNhom: "GP01"-->
+<!--maPhim: 1314-->
+<!--moTa: "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world."-->
+<!--ngayKhoiChieu: "2020-08-28T00:00:00"-->
+<!--tenPhim: "13 reasons why"-->
+<!--trailer: "https://www.youtube.com/embed/1HpZevFifuo"container-->

@@ -1,0 +1,17 @@
+<div class="theaters__content__detail" *ngIf="groupTheater">
+  <mat-tab-group>
+    <mat-tab *ngFor="let item of groupTheater">
+      <ng-template mat-tab-label>
+        <p>
+          <span style="color: #e71a0f; line-height: 1.4">{{
+            groupTheater.maHeThongRap
+          }}</span>
+          {{ item.tenCumRap }}
+        </p>
+      </ng-template>
+      <div *ngFor="let showtime of item.lichChieuPhim">
+        <button>a{{ showtime.ngayChieuGioChieu }}</button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

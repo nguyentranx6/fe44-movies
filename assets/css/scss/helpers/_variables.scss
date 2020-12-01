@@ -1,0 +1,79 @@
+/* Create theme */
+/* Background Color */
+$bg-header: rgba(255,255,255,.95);
+$bg-white:#FFFFFF;
+$bg-footer: #222;
+//Background for Button buy ticket
+$bg-btn-byticket: #fb4226;
+//Background for thumbnail C
+$bg-thumb-c: #fb4226;
+//Background for thumbnail P
+$bg-thumb-p: #00ac4d;
+//Background for seats
+$bg-seat-m: #c913cc;
+$bg-seat-el: #f7b500;
+$bg-seat-ad: #3e515d;
+$bg-seat-selected: #44C020;
+//Background for button Mua ve - Booking page
+$bg-btn-booking: #afafaf;
+//Background for start circle - Details page
+$bg-point-cicle: #7ED321;
+$bg-start: #FB4226;
+
+/* Text Color */
+$tc-primary:#000;
+$tc-secondary:#949494;
+$tc-a-header-hover: #fb4226;
+//Text color for login and location on header
+$tc-login: #9b9b9b;
+//Text color time showing
+$tc-showtime: #108f3e;
+//Text color poster Minutes
+$tc-poster-minus:#4a4a4a;
+//Text color for thumbnail
+$tc-thumb-minus: #9b9b9b;
+//Text color for details page:
+$tc-detail-title: #e9e9e9;
+
+
+/* Font sizes */
+$fs-32: 32px;
+$fs-24: 24px;
+$fs-20: 20px;
+$fs-18: 18px;
+$fs-16: 16px;
+$fs-14: 14px;
+$fs-13: 13px;
+$fs-12: 12px;
+$fs-11: 11.2px;
+
+/* Font Weight */
+
+/* Base Url for img html */
+$base-url: './public/' !default;
+
+/* Base Url for img CSS */
+$base-url-css: '../../' !default;
+
+
+
+
+
+
+
+
+
+
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+
+
+
+
+
+
