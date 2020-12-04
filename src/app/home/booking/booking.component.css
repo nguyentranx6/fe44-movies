@@ -1,0 +1,10 @@
+.booking__info__content {
+    padding-left: 150px;
+    padding-right: 150px;
+
+}
+
+.booking__payment {
+  box-shadow: -2px 2px 10px #888888;
+  padding: 12px;
+}

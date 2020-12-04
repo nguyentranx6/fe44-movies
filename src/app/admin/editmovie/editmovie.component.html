@@ -1,0 +1,93 @@
+<div class="container text-center">
+    <h1 mat-dialog-title>Chỉnh sửa thông tin phim</h1>
+    <div mat-dialog-content class="ml-auto">
+        <div class="container add-new-user">
+            <mat-card>
+                <mat-card-title>Cập nhật thông tin phim</mat-card-title>
+                <mat-card-content>
+                    <form action="" [formGroup]="formEditMovies" (ngSubmit)="editMovies()">
+                        <div class="d-flex flex-column w-100">
+                            <mat-form-field>
+                                <mat-label>Tên phim</mat-label>
+                                <input
+                                        type="text"
+                                        matInput
+                                        placeholder="Enter your account"
+                                        formControlName="tenPhim"
+                                />
+                                <mat-error> This field is <strong>required</strong> </mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Bí danh</mat-label>
+                                <input
+                                        type="text"
+                                        matInput
+                                        placeholder="Enter your account"
+                                        formControlName="biDanh"
+                                />
+                                <mat-error> This field is <strong>required</strong> </mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Trailer</mat-label>
+                                <input
+                                        type="text"
+                                        matInput
+                                        placeholder="Enter your account"
+                                        formControlName="trailer"
+                                />
+                                <mat-error> This field is <strong>required</strong> </mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Mô tả</mat-label>
+                                <textarea
+                                        matInput
+                                        placeholder="Enter your account"
+                                        formControlName="moTa"
+                                        rows="6"
+                                ></textarea>
+                                <mat-error> This field is <strong>required</strong> </mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Ngày khởi chiếu</mat-label>
+                                <input
+                                        type="text"
+                                        matInput
+                                        placeholder="Enter your account"
+                                        formControlName="ngayKhoiChieu"
+                                />
+                                <mat-error> This field is <strong>required</strong> </mat-error>
+                            </mat-form-field>
+                            <label>Hình Ảnh</label>
+                            <input
+                                    type="file"
+                                    placeholder="Enter your account"
+                                    (change)="uploadImage($event)"
+                            />
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div mat-dialog-actions class="row">
+        <div class="mx-auto">
+            <button
+                    mat-button
+                    mat-raised-button
+                    color="accent"
+                    [mat-dialog-close]="false"
+            >
+                Cancel
+            </button>
+            <button
+                    mat-button
+                    mat-raised-button
+                    color="primary"
+                    [mat-dialog-close]="formEditMovies.value"
+            >
+                Update User
+            </button>
+        </div>
+    </div>
+</div>
+

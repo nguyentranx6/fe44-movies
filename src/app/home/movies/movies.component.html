@@ -1,1 +1,93 @@
-<p>movies works!</p>
+<section class="movies container">
+  <div class="movies__list">
+    <h2 id="h2-showing" class="d-inline-block mr-5" style="color: #fa5238">
+      Phim Đang chiếu
+    </h2>
+  </div>
+  <div class="movies__showing" id="movies__list__showing">
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row movies__showing__list" *ngIf="MovieList">
+            <div
+              class="col-12 col-sm-6 col-md-4 col-lg-3 movies__showing__list__item"
+              *ngFor="let movies of MovieList | slice: 0:16"
+              routerLink="/home/detail/{{ movies.maPhim }}"
+            >
+              <div class="movies__img">
+                <img [src]="movies.hinhAnh" alt="" />
+                <div class="movies__overlay"></div>
+              </div>
+              <div class="movies__info">
+                <div>
+                  <span>7.5</span>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div>
+                  <span>{{ movies.tenPhim }}</span>
+                </div>
+                <div>100 phút</div>
+              </div>
+              <div class="movies__detail">
+                <button class="btn btn-success">Xem chi tiet</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row movies__showing__list">
+            <div
+              class="col-12 col-sm-6 col-md-4 col-lg-3 movies__showing__list__item"
+              *ngFor="let movies of MovieList | slice: 17"
+              routerLink="/home/detail/{{ movies.maPhim }}"
+            >
+              <div class="movies__img">
+                <img [src]="movies.hinhAnh" alt="" />
+                <div class="movies__overlay"></div>
+              </div>
+              <div class="movies__info">
+                <div>
+                  <span>7.5</span>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div>
+                  <span>{{ movies.tenPhim }}</span>
+                </div>
+                <div>100 phút</div>
+              </div>
+              <div class="movies__detail">
+                <button class="btn btn-success">Xem chi tiet</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</section>

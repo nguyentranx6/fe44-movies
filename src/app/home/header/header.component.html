@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="w-25">
+    <a class="navbar-brand " href="#">Logo</a>
+  </div>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse ml-auto w-75" id="collapsibleNavId">
+    <div class="navbar-nav mt-2 mt-lg-0 justify-content-between w-100">
+      <div class="d-flex justify-content-between navbar-menu">
+        <li class="nav-item active border-right" routerLink="/">
+          <a class="nav-link" >Trang chủ<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item border-right" routerLink="home/contact">
+          <a class="nav-link">Liên Hệ</a>
+        </li>
+        <li class="nav-item border-right" routerLink="home/news">
+          <a class="nav-link" >Tin Tức</a>
+        </li>
+        <li class="nav-item" routerLink="admin">
+          <a class="nav-link">Admin</a>
+        </li>
+      </div>
+      <div class="d-flex nav-item" *ngIf="auth.isLoggedOut$ | async">
+        <li class="nav-link d-flex" routerLink="home/register">
+          <mat-icon>person</mat-icon>
+          <span>Đăng ký</span>
+        </li>
+        <li class="nav-link d-flex" routerLink="home/login">
+          <mat-icon>login</mat-icon>
+          <span>Đăng nhập</span>
+        </li>
+
+      </div>
+      <div class="nav-item d-flex" *ngIf="(auth.currentUser$ | async) as currentUser">
+        <p class="nav-link" [routerLink]="['./home/user', currentUser.taiKhoan]">Xin chào {{currentUser.hoTen}}</p>
+        <li class="nav-link d-flex" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Đăng xuất</span>
+        </li>
+      </div>
+    </div>
+  </div>
+</nav>
+
+

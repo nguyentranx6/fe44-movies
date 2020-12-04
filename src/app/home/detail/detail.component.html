@@ -1,22 +1,37 @@
 <div class="container mt-5">
-    <div class="detail" *ngIf="movieDetail">
-        <div class="detail__info">
-            <div class="row">
-                <div class="col-3">
-                    <img [src]="movieDetail.hinhAnh" alt="">
-                </div>
-                <div class="col-6">
-                    <p><strong>Tên Phim:</strong> {{movieDetail.tenPhim}}</p>
-                    <p><strong>Mô tả:</strong> {{movieDetail.moTa}}</p>
-
-                    <p><strong>Ngày khởi chiếu:</strong> {{movieDetail.ngayKhoiChieu | date}}</p>
-                </div>
-                <div class="col-3">
-                    <p><strong>Đánh giá:</strong> {{movieDetail.danhGia}}</p>
-                </div>
-            </div>
+  <div class="detail" *ngIf="movieDetail">
+    <div class="detail__info">
+      <div class="row">
+        <div class="col-3">
+          <img [src]="movieDetail.hinhAnh" alt="" />
         </div>
+        <div class="col-6">
+          <p class="movies-name">{{ movieDetail.tenPhim }}</p>
+          <p class="description">{{ movieDetail.moTa }}</p>
+
+          <p class="opening-day">
+            Ngày khởi chiếu: {{ movieDetail.ngayKhoiChieu | date }}
+          </p>
+          <div>
+            <button class="btn btn-success">Mua vé</button>
+          </div>
+        </div>
+        <div class="col-3 text-center">
+          <circle-progress
+            [percent]="movieDetail.danhGia*10"
+            [showUnits]="false"
+            [showSubtitle]="false"
+            [outerStrokeWidth]="10"
+            [innerStrokeWidth]="10"
+            [title]="title(movieDetail.danhGia)"
+            [space]="-10"
+            [radius]="40"
+          ></circle-progress>
+          <p><strong>Đánh giá</strong></p>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <app-theaters></app-theaters>
 

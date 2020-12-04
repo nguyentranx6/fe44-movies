@@ -9,6 +9,7 @@ import { MoviesService } from "../../../services/movies.service";
 })
 export class DetailComponent implements OnInit {
   movieDetail: any;
+
   constructor(
     private activeRoute: ActivatedRoute,
     private movieService: MoviesService
@@ -18,11 +19,17 @@ export class DetailComponent implements OnInit {
     this.activeRoute.params.subscribe({
       next: (param) => {
         this.movieService.getMovieDetail(param.id).subscribe({
-          next: (result)=>{
+          next: (result) => {
             this.movieDetail = result;
-          }
-        })
+          },
+        });
       },
     });
+  }
+  titleFormat(abc) {
+    return abc;
+  }
+  title(number) {
+    return number.toFixed(1);
   }
 }

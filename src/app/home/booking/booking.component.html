@@ -1,1 +1,50 @@
-<p>booking works!</p>
+<div class="container booking mt-3" *ngIf="bookingShowtime">
+  <div class="row">
+    <div class="booking__info col-9">
+      <div class="booking__info__header d-flex justify-content-between">
+          <div>
+              <p>Cụm rạp: {{ bookingShowtime.thongTinPhim.tenCumRap }}</p>
+              <p>{{ bookingShowtime.thongTinPhim.diaChi }}</p>
+              <p>{{ bookingShowtime.thongTinPhim.ngayChieu }}</p>
+              <p>{{ bookingShowtime.thongTinPhim.gioChieu }}</p>
+          </div>
+          <div>
+              <p id="test">Thời gian giữ vé </p>
+              <p id="demo"></p>
+          </div>
+      </div>
+        <hr>
+        <div class="booking__info__content row">
+            <div class="col-1" *ngFor="let chair of bookingShowtime.danhSachGhe">
+                <app-chair  [idChair]="chair" (listBooking)="handleBooking($event)" ></app-chair>
+            </div>
+
+        </div>
+        <div class="booking__info__footer">
+
+        </div>
+    </div>
+    <div class="booking__payment col-3">
+      <div>
+          <p>{{ bookingShowtime.thongTinPhim.tenPhim }}</p>
+          <p>{{ bookingShowtime.thongTinPhim.tenCumRap }}</p>
+          <p class="d-flex justify-content-between" *ngIf="listBooking.length>0">
+              <span class="font-weight-bold">Tên ghế</span>
+              <span class="font-weight-bold">Thành tiền</span>
+          </p>
+          <p class="d-flex justify-content-between" *ngFor="let ticket of listBooking">
+              <span>{{ticket.tenGhe}}</span>
+              <span>{{ticket.giaVe| number}}</span>
+          </p>
+          <p class="d-flex justify-content-between" *ngIf="listBooking.length>0">
+              <span class="font-weight-bold">Tổng cộng:</span>
+              <span class="font-weight-bold">{{totalCash | number}}</span>
+          </p>
+      </div>
+        <div class="text-right" *ngIf="listBooking.length> 0">
+            <button class="btn btn-danger mr-2" (click)="cancelBooking()">Hủy</button>
+            <button class="btn btn-info" (click)="handleCheckOut()">Đặt vé</button>
+        </div>
+    </div>
+  </div>
+</div>

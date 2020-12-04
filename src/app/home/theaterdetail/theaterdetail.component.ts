@@ -10,12 +10,8 @@ export class TheaterdetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.groupTheater);
   }
   customTrackBy(index: number, item: any): any{
-    return index
-  }
-  customTrackBy2(index: number, item: any): any{
     return index
   }
 

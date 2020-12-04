@@ -1,8 +1,4 @@
-
-
-
-
-<button (click)="choiceChair(idChair.maGhe)" [ngClass]="{'chair-vip': idChair.loaiGhe ==='Vip', 'chair-reserved':
+<button (click)="choiceChair(idChair)" [ngClass]="{'chair-vip': idChair.loaiGhe ==='Vip', 'chair-reserved':
 idChair.daDat
 === true}"
         class="btn chair-button">{{idChair.stt}}</button>

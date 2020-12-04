@@ -1,1 +1,95 @@
-<p>adduser works!</p>
+<div class="container add-new-user">
+  <mat-card>
+    <mat-card-header>Thêm người dùng mới</mat-card-header>
+    <mat-card-content>
+      <form
+        action=""
+        class="register__form w-50"
+        [formGroup]="registerForm"
+        (ngSubmit)="handleRegister()"
+      >
+        <mat-form-field>
+          <mat-label><mat-icon>person</mat-icon> Tài khoản </mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter your account"
+            formControlName="taiKhoan"
+          />
+          <mat-error> This field is <strong>required</strong> </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Họ tên</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter your name"
+            formControlName="hoTen"
+          />
+          <mat-error> This field is <strong>required</strong> </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Mã Nhóm</mat-label>
+          <input
+                  type="text"
+                  matInput
+                  placeholder="Enter your mã nhóm"
+                  formControlName="maNhom"
+          />
+          <mat-error> This field is <strong>required</strong> </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Mật Khẩu</mat-label>
+          <input
+            type="password"
+            matInput
+            placeholder="Enter your password"
+            formControlName="matKhau"
+            minlength="6"
+          />
+          <mat-hint align="end"
+            >{{ registerForm.value.matKhau?.length }} / 6</mat-hint
+          >
+          <mat-error *ngIf="registerForm.hasError('required')">
+            This field is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="!registerForm.hasError('minLength')"
+            >Password must 6 character</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label><mat-icon>email</mat-icon> Email</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="Enter your email"
+            formControlName="email"
+            required
+          />
+          <mat-error> This field is <strong>required</strong> </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label><mat-icon>phone</mat-icon> Số điện thoại</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter your phone number"
+            formControlName="soDt"
+          />
+          <mat-error> This field is <strong>required</strong> </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Mã Loại người dùng</mat-label>
+          <mat-select formControlName="maLoaiNguoiDung">
+            <mat-option *ngFor="let type of list" [value]="type.value">
+              {{ type.viewValue }}
+            </mat-option>
+          </mat-select>
+          <mat-error> This field is <strong>required</strong> </mat-error>
+        </mat-form-field>
+      </form>
+      <button class="mr-3" mat-raised-button color="accent" (click)="resetFormAddUser()">Hủy</button>
+      <button mat-raised-button color="primary" [disabled]="!registerForm.valid" (click)="handleRegister()">Thêm</button>
+    </mat-card-content>
+  </mat-card>
+</div>

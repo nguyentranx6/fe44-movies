@@ -1,1 +1,70 @@
-<p>userdetail works!</p>
+<div class="container mt-2 mb-4" *ngIf="user">
+    <div *ngIf="type ==='home'">
+        <h3>Thông tin cá nhân</h3>
+    </div>
+    <mat-tab-group>
+        <mat-tab label="Thông tin người dùng">
+            <p>Họ tên: {{user.hoTen}}</p>
+            <p>Email: {{user.email}}</p>
+            <p>Số điện thoại: {{user.soDT}}</p>
+            <p>Tài khoản: {{user.taiKhoan}}</p>
+            <button mat-button mat-raised-button color="primary" (click)="openDialog(user)">Cập nhật thông tin</button>
+        </mat-tab>
+        <mat-tab label="Thông tin đặt vé">
+            <div>
+                <table mat-table [dataSource]="bookingInfo">
+                    <ng-container matColumnDef="id" >
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}}. </td>
+                    </ng-container>
+                    <ng-container matColumnDef="maVe">
+                        <th mat-header-cell *matHeaderCellDef>Mã vé</th>
+                        <td mat-cell *matCellDef="let element">{{element.maVe}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="danhSachGhe">
+                        <th mat-header-cell *matHeaderCellDef>Danh sách ghế</th>
+                        <td style="width: 400px;" mat-cell *matCellDef="let element">
+                            <div *ngFor="let item of element.danhSachGhe">
+                                <span>Mã cụm rạp: {{item.maCumRap}}</span>
+                                <span>Mã ghế: {{item.maGhe}}</span>
+                                <span>Mã TH Rạp{{item.maHeThongRap}}</span>
+                                <span>Mã rạp: {{item.maRap}}</span>
+                                <span>Tên Cụm rạp{{item.tenCumRap}}</span>
+                                <span>Tên ghế: {{item.tenGhe}}</span>
+                                <span>Tên hệ thống rạp: {{item.tenHeThongRap}}</span>
+                                <span>Têm rạp: {{item.tenRap}}</span>
+                            </div>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="giaVe">
+                        <th mat-header-cell *matHeaderCellDef>Giá vé</th>
+                        <td mat-cell *matCellDef="let element">{{element.giaVe}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ngayDat">
+                        <th mat-header-cell *matHeaderCellDef>Ngày đặt</th>
+                        <td mat-cell *matCellDef="let element">{{element.ngayDat | date}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="tenPhim">
+                        <th mat-header-cell *matHeaderCellDef>Tên phim</th>
+                        <td mat-cell *matCellDef="let element">{{element.tenPhim}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="thoiLuongPhim">
+                        <th mat-header-cell *matHeaderCellDef>Thời lượng phim</th>
+                        <td mat-cell *matCellDef="let element">{{element.thoiLuongPhim}}</td>
+                    </ng-container>
+
+                    <tr class="font-weight-bold"  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4" class="text-danger">
+                            Người dùng chưa đặt vé
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </mat-tab>
+    </mat-tab-group>
+</div>

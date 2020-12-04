@@ -1,0 +1,7 @@
+.slidebar {
+    height: 100%;
+}
+.menu-item {
+    cursor: pointer;
+    font-weight: bold;
+}

@@ -1,0 +1,18 @@
+.navbar a {
+  cursor: pointer;
+}
+.navbar li {
+  cursor: pointer;
+}
+
+.navbar-collapse {
+  flex-grow: unset;
+}
+.navbar-menu {
+  margin-left: 20%;
+}
+mat-icon {
+}
+.nav-link:hover {
+  cursor: pointer;
+}

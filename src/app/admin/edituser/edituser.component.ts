@@ -26,6 +26,22 @@ export class EdituserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setDefaultEditUser();
+  }
+  setDefaultEditUser(){
+    let editUser = {
+      taiKhoan: this.userEdit.taiKhoan,
+      matKhau: this.userEdit.matKhau,
+      email: this.userEdit.email,
+      soDt: this.userEdit.soDt || this.userEdit.soDT,
+      maLoaiNguoiDung: this.userEdit.maLoaiNguoiDung || null,
+      hoTen: this.userEdit.hoTen,
+      maNhom: 'GP01',
+    }
+    this.editUserForm.setValue(editUser)
   }
 
+  handleSubmitEditUser(editUserForm: FormGroup) {
+    console.log(editUserForm.value);
+  }
 }

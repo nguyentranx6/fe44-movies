@@ -1,0 +1,7 @@
+.detail .detail__info .movies-name {
+    font-size: 24px;
+}
+
+.detail .detail__info .description, .opening-day {
+    font-size: 14px;
+}

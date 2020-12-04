@@ -1,0 +1,95 @@
+.theaters__list {
+    padding: 20px;
+  border: 1px solid gainsboro;
+}
+.theaters__list img {
+  width: 50px;
+  margin: 15px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.theaters__list img:hover, .theaters__list img:focus {
+  opacity: 1;
+}
+.theaters__content__detail {
+  height: 650px;
+  overflow-y: auto;
+}
+.theaters__content__detail > div {
+  margin-bottom: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.theaters__content__detail > div:hover {
+  opacity: 1;
+}
+.theaters__content__detail p {
+  font-size: 14px;
+  margin: 0 0 0 15px;
+}
+.theaters__content__detail img {
+  width: 50px;
+  height: 50px;
+}
+.theaters__content__showtime {
+  height: 650px;
+  overflow-y: auto;
+}
+.theaters__content__showtime img {
+  width: 50px;
+  height: 50px;
+}
+.theaters__content__showtime p {
+  margin: 0;
+}
+.theaters__content__showtime button {
+  padding: 8px 12px;
+  margin-right: 8px;
+}
+@media screen and (max-width: 768px) {
+  .theaters__content__showtime__item h3 {
+    font-size: 16px;
+  }
+  .theaters__content__showtime__item p {
+    font-size: 14px;
+  }
+  .theaters__content__showtime__item button {
+    padding: 4px 6px;
+    margin-right: 0;
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+:host ::ng-deep .mat-tab-labels {
+  flex-direction: column;
+}
+
+mat-tab-group {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+:host ::ng-deep .mat-tab-body-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-tab-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+:host ::ng-deep mat-ink-bar {
+  display: none;
+}
+.mat-tab-label-content {
+  margin-top: 10px;
+}

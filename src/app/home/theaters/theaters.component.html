@@ -1,0 +1,15 @@
+<section class="theaters container mt-5 mb-5 d-sm-block d-none">
+  <div class="theaters__list" *ngIf="showTime">
+    <mat-tab-group>
+      <mat-tab *ngFor="let theater of showTime.heThongRapChieu">
+        <ng-template mat-tab-label style="margin-top: 12px">
+          <img  [src]="theater.logo" alt="" />
+          <p>{{theater.tenHeThongRap}}</p>
+        </ng-template>
+        <app-theaterdetail
+          [groupTheater]="theater.cumRapChieu"
+        ></app-theaterdetail>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>
